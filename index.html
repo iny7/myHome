@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+	<meta charset="UTF-8">
+	<title>项目展示</title>
+	<link rel="stylesheet" href="css/style.css" />
+	<script src="js/react.min.js"></script>
+	<script src="js/react-dom.min.js"></script>
+	<script src="js/react-router.min.js"></script>
+	<script src="js/browser.min.js"></script>
+</head>
+<body>
+	<script type="text/babel">
+
+	var Link = ReactRouter.Link;
+	var IndexLink = ReactRouter.IndexLink;
+	var Router = ReactRouter.Router;
+	var Route = ReactRouter.Route;
+	var IndexRoute = ReactRouter.IndexRoute;
+	var hashHistory = ReactRouter.hashHistory;
+
+	//原子组件
+		var List = React.createClass({
+			render : function(){
+				return (
+					<ul>
+						<li><a href="">1</a></li>
+						<li><a href="">2</a></li>
+						<li><a href="">3</a></li>
+					</ul>)
+			}
+		})
+
+	//页头
+		var Header = React.createClass({
+			getDefaultProps : function(){
+				return {
+					title : '页头',
+				}
+			},
+			render : function(){
+				return (<header className="header">
+					<i className="logo">LOGO</i>
+					<ul>
+						<li><IndexLink activeClassName="active" to={"/"}>了解我</IndexLink></li>
+						<li><Link activeClassName="active" to={"/demos"}>作品展示</Link></li>
+						<li><a href="">GitHub</a></li>
+					</ul>
+				</header>)
+			}
+		})
+		var Info = React.createClass({
+			render : function(){
+				return (
+					<section className="info">个人主页</section>
+				)
+			}
+		})
+
+	//左侧导航条
+		
+
+		var Sidebar = React.createClass({
+			render : function(){
+				return (
+				<nav className="sidebar">
+					<ul className="menu">
+			          <li><IndexLink activeClassName="active" to="/demos">好玩的简历</IndexLink></li>
+			          <li><Link activeClassName="active" to="/demos/chess">五子棋</Link></li>
+			          <li><Link activeClassName="active" to="/demos/bookStore">图书管理</Link></li>
+			          <li><Link activeClassName="active" to="/demos/ifun">IFUN学生信息系统</Link></li>
+			     	</ul>
+				</nav>)
+			}
+		})
+
+	//右侧内容区
+		var Content = React.createClass({
+			render : function(){
+				return <section className={this.props.className} name={this.props.name}></section>
+			}
+		})
+	//中间区域(导航+内容)
+		var Project = React.createClass({
+			render : function(){
+				return <section className="demo">
+					<Sidebar/>
+					<Content/>
+				</section>
+			}
+		})
+	//页脚
+		var Footer = React.createClass({
+			render : function(){
+				return <footer className={this.props.className}></footer>
+			}
+		})
+
+	//整页
+		var App = React.createClass({
+			render : function(){
+				return (
+					<div className="container">
+						<Header />
+						{this.props.children}
+						<Footer className="footer" />
+					</div>
+				)
+			}
+		})
+		
+
+		ReactDOM.render(
+			<Router history={hashHistory}>
+			    <Route path="/" component={App}>
+			      <IndexRoute component={Info} />
+			      <Route path="demos" component={Project}>
+			      	<IndexRoute component={Content} />
+			      	<Route path="chess" component={Content} />
+			      	<Route path="bookStore" component={Content} />
+			      	<Route path="ifun" component={Content} />
+			      </Route>
+			    </Route>
+		    </Router>,document.body)
+	</script>
+</body>
+</html>
