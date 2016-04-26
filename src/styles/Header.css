@@ -1,0 +1,24 @@
+.header{
+	height:60px;
+	line-height:60px;
+	background-color:#385C5C;
+	
+}
+.header ul,.header li{
+	display:inline-block;
+}
+.header ul{
+	margin-right:20px;
+	float: right;
+}
+.header .logo{
+	display:inline-block;
+	text-indent:2em;
+	height:100%;
+	width:100px;
+}
+.header a{
+	margin:0 10px;
+	display:block;
+	color:#CCC;
+}
