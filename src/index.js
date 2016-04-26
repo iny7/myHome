@@ -4,7 +4,11 @@ import ReactDOM from 'react-dom';
 import App from './components/Main';
 import Info from './components/Info';
 import Project from './components/Project';
-import Content from './components/Content';
+import Resume from './components/Resume';
+import Chess from './components/Chess';
+import BookStore from './components/BookStore';
+import Ifun from './components/Ifun';
+import Calendar from './components/Calendar';
 import {Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 // Render the main component into the dom
@@ -13,10 +17,11 @@ ReactDOM.render(
 	    <Route path="/" component={App}>
 	      <IndexRoute component={Info} />
 	      <Route path="project" component={Project}>
-	      	<IndexRoute component={Content} />
-	      	<Route path="chess" component={Content} />
-	      	<Route path="bookStore" component={Content} />
-	      	<Route path="ifun" component={Content} />
+	      	<IndexRoute component={Resume} />
+	      	<Route path="chess" component={Chess} />
+	      	<Route path="bookStore" component={BookStore} />
+	      	<Route path="ifun" component={Ifun} />
+	      	<Route path="calendar" component={Calendar} />
 	      </Route>
 	    </Route>
     </Router>,document.querySelector('#app'));

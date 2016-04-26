@@ -1,0 +1,16 @@
+.ifun{
+	flex-grow:1;
+	background-color:#CDDCD8;
+	display:flex;
+	animation:1s text-fadeIn;
+	text-indent:2em;
+}
+
+@-webkit-keyframes text-fadeIn {
+	0%{ 
+		text-indent:-2em;
+ 	}
+	100% { 
+		text-indent:2em;
+	}
+}

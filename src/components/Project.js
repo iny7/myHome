@@ -7,7 +7,7 @@ var Project = React.createClass({
 	render : function(){
 		console.log(this.props)
 		console.log(this.props.route)
-		return <section className="content">
+		return <section className="project">
 			<Sidebar/>
 		{/*使用路由一定要改这一句才行!然后就可以在Content里拿到当前路由*/}
 			{this.props.children}

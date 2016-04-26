@@ -1,0 +1,5 @@
+.bookStore{
+	flex-grow:1;
+	background-color:#CDDCD8;
+	display:flex;
+}

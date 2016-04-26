@@ -1,0 +1,15 @@
+.resume{
+	flex-grow:1;
+	background-color:#CDDCD8;
+	display:flex;
+	animation:1s fadeIn;
+}
+
+@-webkit-keyframes fadeIn {
+	0%{ 
+		transform:translateX(-50px);
+ 	}
+	100% { 
+	transform:translateX(0);
+	}
+}

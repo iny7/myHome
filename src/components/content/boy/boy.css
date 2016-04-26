@@ -1,0 +1,71 @@
+.boy{
+	/* position: absolute; */
+	z-index:10;
+	/* 这里一定要用100%,原因是小地图每一个格子的宽高都已经用js做了近似计算,避免了像素为小数带来的浏览器绘制误差,如果这里用80%,就又出现了小数,导致背景图绘制出现误差,如果要对boy做缩放,给父盒子transform */
+	width: 100%;
+	height: 100%;
+	margin:0 auto;
+	background: url("./boy.png");
+	background-size: 700% 200%;
+	background-position: -200% -103%; 
+	/*增加了boy-container后,下面这些3d部分就不需要boy来完成,可以使代码更清晰*/
+	/* transform:rotateX(-70deg) skew(18deg); */
+	transform-origin:50% 100%;
+}
+.boyLeft{
+	transform: rotateY(180deg);
+}
+.boy.walk{
+	animation: walk 1s steps(1,start) infinite backwards;
+}
+.boy.turnLeft{
+	animation: turn 1s steps(1,start) forwards;
+}
+.boy.turnRight{
+	animation: turn 1s steps(1,start) reverse;
+}
+@keyframes walk{
+	25%{
+		/* background-color:yellow; */
+		background-position: -400% 0;
+	}
+	50%{
+		/* background-color:green; */
+		background-position: -200% -103%; 
+		
+	}
+	75%{
+		background-position: -100% -103%;
+		/* background-color:red; */
+	}
+	100%{
+		/* background-color:blue; */
+		background-position: 0 -103%; 
+	}
+}
+@keyframes turn {
+	17%{
+		background-position: -600% -103%;
+		transform:rotateY(0deg);
+	}
+	33%{
+		background-position: -500% -103%; 
+		transform:rotateY(0deg);
+	}
+	50%{
+		background-position: -400% -103%;
+		transform:rotateY(0deg);
+	}
+	67%{
+		background-position: -500% -103%;
+		transform:rotateY(180deg);
+	}
+	83%{
+		background-position: -600% -103%; 
+		transform:rotateY(180deg);
+	}
+	100%{
+		background-position: -200% -103%; 
+		transform:rotateY(180deg);
+	}
+}

@@ -13,6 +13,7 @@ var Sidebar = React.createClass({
 	          <li><Link activeClassName="active" to="/project/chess">五子棋</Link></li>
 	          <li><Link activeClassName="active" to="/project/bookStore">图书管理</Link></li>
 	          <li><Link activeClassName="active" to="/project/ifun">IFUN学生信息系统</Link></li>
+	          <li><Link activeClassName="active" to="/project/calendar">日历组件</Link></li>
 	     	</ul>
 		</nav>)
 	}

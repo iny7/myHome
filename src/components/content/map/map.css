@@ -1,0 +1,63 @@
+.map{
+	/* fixed在Safari下被压在每页的蒙版层下
+	position:fixed; */
+	position:absolute;
+	display:flex;
+	border:6px solid transparent;
+	width:3rem;
+	height:3rem;
+	max-width:150px;
+	max-height:150px;
+	background:url("../images/wall.jpeg") repeat-y;
+	background-origin:border-box;
+	background-color:#DDD;
+	right:1.5rem;
+	top:0px;
+	z-index:20;
+	box-shadow:0 0 10px 4px #CCC;
+	transform-style:preserve-3d;
+	transform-origin:50% 100%;
+	transform:rotateX(60deg) skew(-20deg);
+}
+.map ol{
+	display:flex;
+	flex-wrap:wrap;
+	width:100%;
+	height:100%;
+	background:url("../images/wall.jpeg");
+	background-size:cover;
+}
+.cell{
+	border-radius: 10px;
+}
+.cell-used{
+	border-radius: 0;
+	background:url("../images/floor.jpg") no-repeat;
+	background-size:cover;
+	background-color:#888;
+	cursor:pointer;
+}
+.cell-border{
+	position:absolute;
+	z-index:9;
+	background-color:transparent;
+	box-sizing:border-box;
+	border-radius:0;
+	/* background-color:red; */
+	transform-style:preserve-3d;
+}
+.boy-container{
+	width:100%;
+	height:100%;
+	/* background-color: green; */
+	transform: scaleX(0.8) rotateX(-90deg) translateY(-50%);
+}
+.cell a{
+	display:block;
+	height:100%;
+	color:#666;
+}
+.cell a:hover{
+	color:#900;
+}
+
