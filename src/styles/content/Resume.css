@@ -1,8 +1,14 @@
 .resume{
 	flex-grow:1;
 	background-color:#CDDCD8;
-	display:flex;
+	/* display:flex; */
+	/* flex-direction:column; */
 	animation:1s fadeIn;
+}
+.showBox{
+	text-align:center;
+	width:100%;
+	border:1px solid red;
 }
 
 @-webkit-keyframes fadeIn {

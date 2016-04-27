@@ -5,7 +5,7 @@ import React from 'react';
 var Info = React.createClass({
 	render : function(){
 		return (
-			<section className="info">个人主页</section>
+			<section className="info">这里用能力六边形图表来展示</section>
 		)
 	}
 })
