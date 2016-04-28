@@ -1,11 +1,14 @@
 require('styles/Info.css');
 
 import React from 'react';
+import Ability from './content/ability/Ability';
 
 var Info = React.createClass({
 	render : function(){
 		return (
-			<section className="info">这里用能力六边形图表来展示</section>
+			<section className="info">
+				<Ability></Ability>
+			</section>
 		)
 	}
 })

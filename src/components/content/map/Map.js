@@ -29,15 +29,17 @@ var Map = React.createClass({
 		}
 	},
 	handleKeyDown : function(e){
-		// e.preventDefault();
 		var code = e.keyCode
+		if(code < 37 || code > 40)
+			return;
+
+		e.preventDefault();
 		var arr = this.props.arr;
 		var pos = this.state.curPos;
 		var i = pos.i;
 		var j = pos.j;
 		switch (code){
 			case 37 : //left
-				e.preventDefault();
 				console.log("left");
 				if(arr[i][j-1] && arr[i][j-1] == 1){
 					//还要通知boy该移动了!
@@ -50,7 +52,6 @@ var Map = React.createClass({
 				}
 				break;
 			case 38 : //top
-				e.preventDefault();
 				console.log("top");
 				if(arr[i-1] && arr[i-1][j] == 1){
 					var state = this.state;
@@ -62,7 +63,6 @@ var Map = React.createClass({
 				}
 				break;
 			case 39 : //right
-				e.preventDefault();
 				console.log("right");
 				if(arr[i][j+1] && arr[i][j+1] == 1){
 					var state = this.state;
@@ -74,7 +74,6 @@ var Map = React.createClass({
 				}
 				break;
 			case 40 : //down
-				e.preventDefault();
 				console.log("down");
 				if(arr[i+1] && arr[i+1][j] == 1){
 					var state = this.state;
@@ -87,6 +86,7 @@ var Map = React.createClass({
 				break;
 			default :
 				break;
+			return;
 		}
 	},
 	componentDidMount(){

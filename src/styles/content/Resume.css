@@ -3,7 +3,7 @@
 	background-color:#CDDCD8;
 	/* display:flex; */
 	/* flex-direction:column; */
-	animation:1s fadeIn;
+	animation:.5s fadeIn;
 }
 .showBox{
 	text-align:center;
@@ -13,9 +13,9 @@
 
 @-webkit-keyframes fadeIn {
 	0%{ 
-		transform:translateX(-50px);
+		margin-left:-30px;
  	}
 	100% { 
-	transform:translateX(0);
+		margin-left:0px;
 	}
 }

@@ -1,0 +1,15 @@
+.description{
+	text-indent:2em;
+}
+.address{
+	text-align:center;
+	margin:0 auto;
+}
+.address a{
+	font-size:20px;
+	margin:20px;
+	color:#385C5C;
+}
+.address a:hover{
+	color:#986A6A;
+}

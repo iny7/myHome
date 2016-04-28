@@ -9,6 +9,7 @@ require('styles/content/Resume.css');
 
 import React from 'react';
 import Map from './content/map/Map';
+import Description from './content/Description';
 
 
 //有趣的个人简历
@@ -41,6 +42,13 @@ var Resume = React.createClass({
  					<button onClick={this.boyLeft}>左转</button>
  					<button onClick={this.boyRight}>右转</button>
  				</section>
+ 				<Description>
+ 					<p>这是一个使用jQuery开发的全屏页面，运动了一些CSS3动画实现了页面间的平滑过渡，小地图的伪3D样式，以及缩略图效果，开发中对数组操作和事件（键盘、触屏和触摸板）进行了简单的封装以便复用（Seven.js）</p>
+	 				<div className="address">
+		 				<a className="" href="">在线演示</a>
+		 				<a className="" href="">查看源码</a>
+	 				</div>
+ 				</Description>
  			</section>
         )
 	}
