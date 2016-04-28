@@ -3,7 +3,20 @@ require('./Ability.css');
 import React from 'react';
 
 var Ability = React.createClass({
-	componentDidMount(){
+	getDefaultProps(){
+		return {
+			centerPoint = {
+				x : width / 2,
+				y : height / 2
+			}
+	},
+	getInitialState(){
+		return {
+
+		}
+	},
+	//初始化画板背景
+	drawBg(){
 		var canvas = this.refs.canvas;
 		var rect = canvas.getBoundingClientRect();
 		var width = rect.width;
@@ -14,10 +27,7 @@ var Ability = React.createClass({
 		canvas.height = height;
 
 		//中心点
-		var centerPoint = {
-			x : width / 2,
-			y : height / 2
-		}
+		var 
 		console.log("center",centerPoint)
 		var r = 100;
 
@@ -44,22 +54,20 @@ var Ability = React.createClass({
 		ctx.fillRect(0, 0, width, height)
 		ctx.lineWidth = 2;
 
-		for(var i = 0 ; i < edge ; i ++){
+		ctx.beginPath();
+		ctx.moveTo(posArr[0].x, posArr[0].y)
+		for(var i = 1 ; i < edge ; i ++){
 			var x = posArr[i].x;
 			var y = posArr[i].y;
-			ctx.moveTo(x, y)
-			if(i != posArr.length - 1){
-				var nx = posArr[i+1].x;
-				var ny = posArr[i+1].y;
-				ctx.lineTo(nx, ny);
-			}else{
-				ctx.lineTo(posArr[0].x, posArr[0].y);
-			}		
-			
+			ctx.lineTo(x, y);
+					
 		}
-
+		ctx.closePath();
 		ctx.stroke();
+	},
 
+	componentDidMount(){
+		this.drawBg();		
 	},
 	render(){
 		return <canvas className="ability" ref="canvas"></canvas>
