@@ -1,4 +1,13 @@
 .ability{
+	position:relative;
 	width:600px;
 	height:600px;
+}
+.back{
+	position:absolute;
+	width:600px;
+	height:600px;
+}
+.front{
+	position:absolute;	
 }
